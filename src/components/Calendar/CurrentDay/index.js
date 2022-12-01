@@ -4,8 +4,8 @@ import withDate from '../../../HOCs/withDate';
 import style from '../Calendar.module.css'
 
 const CurrentDay = (props) => {
-    const {activeDay, fnChange} = props
-    console.log(fnChange)
+    const {activeDay} = props
+
     return (
         <div className={style.dask}>
             <p className={style.mainDay}>{format(activeDay, 'cccc')}</p>

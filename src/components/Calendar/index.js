@@ -13,13 +13,11 @@ class Calendar extends Component {
         }
     }
 
-
     changeActive = (day) => {
         this.setState({
             activeDay: day
         })
     }
-
 
     render() {
         const {currentDay, activeDay} = this.state

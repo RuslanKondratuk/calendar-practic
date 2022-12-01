@@ -5,8 +5,8 @@ import Week from '../Week';
 import withDate from '../../../../HOCs/withDate';
 
 const Month = (props) => {
-                const {month, year, fnChange} = props
-                console.log(fnChange)
+                const {month, year} = props
+
                 const weekOfYear = Number(format(new Date(`${year} ${month}`), 'w')) // Получаем какая первая неделя нужного месяца в году по счету (45)
 
                 const weekOfMonth = getWeeksInMonth(new Date(`${year}, ${month}`)) // Получаем сколько недель в нужном месяцу (5)
