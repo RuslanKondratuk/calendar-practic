@@ -19,7 +19,7 @@ const CalendarBody = (props) => {
                         {weekDays.map((day) => <td>{day}</td>)}
                     </tr>
                 </thead>
-                <Month month = {month} year = {year} activeDay = {activeDay} fnchange = {fnchange}/>
+                <Month month = {month} year = {year} activeDay = {activeDay} fnchange = {fnchange} key = {month}/>
             </table>
         </div>
     );

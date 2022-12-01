@@ -8,19 +8,20 @@ const Day = (props) => {
     const {month, day, activeDay, fnchange} = props
     const curentDay = format(day, 'd')
     const monthOfDay = format(day, 'M')
-    const cn = activeDay === curentDay && month === monthOfDay ? 'column active' : 'column'
+    const truDay = format(activeDay, 'd')
+    const cn = truDay === curentDay &&  monthOfDay === month ?  'column active' : 'column'
 
     const handler = () => {
-        fnchange(curentDay)
+        fnchange(day)
     }
 
-    console.log(day)
-
-    const daysOfMonth = () =>  month === monthOfDay ? curentDay : null;
+    const daysOfMonth = () =>  month === monthOfDay ? <td className={cn} onClick = {handler}>{curentDay}</td> : <td></td>;
 
     return (
+        <>
+            {daysOfMonth()}
+        </>
 
-        <td className={cn} onClick = {handler}>{daysOfMonth()}</td>
     );
 }
 

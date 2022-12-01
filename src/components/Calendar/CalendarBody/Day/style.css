@@ -1,6 +1,7 @@
 .column {
     text-align: center;
     width: 40px;
+    cursor: pointer;
 }
 
 .active {
