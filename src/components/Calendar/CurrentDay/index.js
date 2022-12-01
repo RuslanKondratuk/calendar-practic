@@ -1,10 +1,11 @@
 import { format } from 'date-fns';
 import React from 'react';
+import withDate from '../../../HOCs/withDate';
 import style from '../Calendar.module.css'
 
 const CurrentDay = (props) => {
-    const {activeDay} = props
-    console.log(activeDay)
+    const {activeDay, fnChange} = props
+    console.log(fnChange)
     return (
         <div className={style.dask}>
             <p className={style.mainDay}>{format(activeDay, 'cccc')}</p>
@@ -13,4 +14,6 @@ const CurrentDay = (props) => {
     ); // вытягиваем из даты через функцию format название дня и число дня
 }
 
-export default CurrentDay;
+const wrappedDate = withDate(CurrentDay)
+
+export default wrappedDate;

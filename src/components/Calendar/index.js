@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { DateContext } from '../../context';
 import CalendarBody from './CalendarBody';
 import CurrentDay from './CurrentDay';
 import style from './Calendar.module.css'
@@ -23,10 +24,12 @@ class Calendar extends Component {
     render() {
         const {currentDay, activeDay} = this.state
         return (
-            <section className={style.container}>
-                <CurrentDay day={currentDay} activeDay={activeDay}/>
-                <CalendarBody day={currentDay} activeDay = {activeDay} fnchange = {this.changeActive}/>
-            </section>
+            <DateContext.Provider value = {[currentDay, activeDay, this.changeActive]}>
+                <section className={style.container}>
+                    <CurrentDay/>
+                    <CalendarBody/>
+                </section>
+            </DateContext.Provider>
         );
     }
 }
