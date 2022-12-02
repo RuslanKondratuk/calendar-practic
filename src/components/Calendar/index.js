@@ -8,7 +8,6 @@ class Calendar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentDay: new Date(),
             activeDay: new Date(),
         }
     }
@@ -20,7 +19,8 @@ class Calendar extends Component {
     }
 
     render() {
-        const {currentDay, activeDay} = this.state
+        const currentDay = new Date();
+        const {activeDay} = this.state
         return (
             <DateContext.Provider value = {[currentDay, activeDay, this.changeActive]}>
                 <section className={style.container}>
